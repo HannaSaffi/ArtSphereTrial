@@ -1,0 +1,4 @@
+{
+    "git.ignoreLimitWarning": true,
+    "codeQL.githubDatabase.download": "never"
+}

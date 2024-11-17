@@ -30,10 +30,13 @@ function Home() {
             <div className="intro-text">
                 <h1>Welcome to Art Sphere</h1>
                 <p>
-                    Art Sphere is an innovative platform designed to showcase the beauty of digital art and
-                    creativity. Explore a curated selection of stunning visual art pieces from talented artists
-                    around the world. Whether you're an art enthusiast or just looking for inspiration, Art Sphere
-                    offers a dynamic experience for all.
+                As passionate students of Computer Science and Art, we are driven by the desire to merge
+                 our skills and passions to celebrate cultural appreciation. This vision inspired the creation 
+                 of Art Sphere, an innovative platform designed to showcase a diverse collection of art pieces, 
+                 that finds pieces of art around the user, so if the user wants to go and see they can. Art Sphere
+                  empowers users to build a personalized history of previously viewed art while curating a bucket 
+                  list of pieces they aspire to explore. By blending technology with creativity, Art Sphere delivers
+                   an engaging and dynamic experience that fosters a deeper connection with art and culture.
                 </p>
             </div>
 

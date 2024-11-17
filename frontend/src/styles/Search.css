@@ -1,41 +1,246 @@
-/* ArtPieceProfile.css */
+/* General Reset and Font Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif; /* Global font */
+}
 
-.art-piece-profile {
-    margin: 20px auto;
+/* Search Container */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f7f8fc, #a6c4ff); /* Gradient background */
     padding: 20px;
-    max-width: 600px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Header Styles */
+.search-container h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.search-bar input {
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 300px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-bar input:focus {
+    border-color: #ffb296; /* Border color when focused */
+}
+
+.search-bar button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #ffb296;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.search-bar button:hover:not(:disabled) {
+    background-color: #f06c4e;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Error and Loading Messages */
+.error-message {
+    font-size: 16px;
+    color: red;
+    margin-top: 20px;
+}
+
+.search-container p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Results Section */
+.results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* Images Container */
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Image Item */
+.image-item {
+    background-color: white;
+    border-radius: 10px; /* Less round corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px; /* Fixed width for consistency */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
     text-align: left;
 }
 
-.art-piece-profile h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.image-item:hover {
+    transform: scale(1.05); /* Hover zoom effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
-.art-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+/* Image Styling */
+.image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensure images fill the space correctly */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.art-piece-profile p {
-    margin: 10px 0;
-    font-size: 16px;
+/* Title and Info Text Inside Each Image Item */
+.image-item p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+    margin: 5px 0;
 }
 
-.art-piece-profile a {
-    display: inline-block;
+/* Add to Cart Button */
+.image-item button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #ffb296;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 10px;
-    text-decoration: none;
-    color: #007bff;
 }
 
-.art-piece-profile a:hover {
-    text-decoration: underline;
+.image-item button:hover {
+    background-color: #f06c4e;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Empty State Text */
+.search-container .empty-state {
+    font-size: 18px;
+    color: #ff6f61;
+    margin-top: 30px;
+}
+
+/* Add Art Button */
+.add-art-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.add-art-button:hover {
+    background-color: #f06c4e;
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.add-art-button:focus {
+    outline: none;
+}
+
+/* Add Art Form */
+.add-art-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.add-art-form input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+}
+
+.add-art-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.add-art-form button:hover {
+    background-color: #f06c4e;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .search-bar input {
+        width: 250px; /* Adjust input width for smaller screens */
+    }
+
+    .images-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-item {
+        width: 100%; /* Make image items take full width on mobile */
+        max-width: 400px;
+    }
+
+    .image-item button {
+        width: 100%; /* Make button full width on mobile */
+    }
+
+    .add-art-form {
+        width: 90%; /* Make form take up most of the screen width on mobile */
+    }
 }

@@ -18,6 +18,27 @@
     background: linear-gradient(180deg, #ffd2bd, #a6c4ff); /* Gradient background */
 }
 
+/* Add these styles to Suggest.css for better UX */
+
+.suggest-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    margin-top: 20px;
+}
+
+.art-display {
+    margin-top: 30px;
+}
+
+.art-description {
+    font-size: 16px;
+    color: #333;
+}
+
 /* Title and intro text */
 .suggest-container h1 {
     font-size: 36px;
@@ -31,7 +52,7 @@
     color: #333;
     line-height: 1.6;
     padding: 0 20px;
-    max-width: 800px; /* Limit paragraph width */
+    width: 600px; /* Fixed width for text */
     text-align: center;
     margin-bottom: 25px; /* Reduced space between intro text and the next section */
 }
@@ -47,9 +68,9 @@
 
 /* Image styling for all images */
 .image {
-    width: 100%; /* Make image take 100% of the container's width */
-    max-width: 1000px; /* Limit image width to prevent stretching */
-    height: auto; /* Maintain aspect ratio */
+    width: 600px; /* Fixed width for the image */
+    height: 400px; /* Fixed height for the image */
+    object-fit: cover; /* Ensures the image fills the space */
     border-radius: 12px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Hover effect transition */
@@ -67,7 +88,7 @@
     color: #333;
     margin-top: 15px; /* Reduced margin for description */
     padding: 0 20px;
-    max-width: 900px; /* Limit width of the description */
+    width: 550px; /* Fixed width for description */
     line-height: 1.6;
     text-align: center;
 }

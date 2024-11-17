@@ -1,12 +1,16 @@
 from app import create_app
 from app.services.data_handler import import_csv_to_db
+from flask_cors import CORS
 import os
+
 
 # Use the absolute path for your CSV file
 csv_file = "app/Met_Museum_Collection.csv"
 
 # Create the Flask app instance
 app = create_app()
+
+CORS(app)
 
 # Import data if the CSV file exists
 with app.app_context():
@@ -18,4 +22,4 @@ with app.app_context():
 
 # Run the app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True,port=5000)

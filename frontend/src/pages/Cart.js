@@ -11,7 +11,7 @@ const Cart = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch('http://localhost:5000/api/art/cart');
+            const response = await fetch('http://localhost:5000/api/art/wishlist');
             const data = await response.json();
             if (response.ok) {
                 setCart(data);
@@ -64,10 +64,10 @@ const Cart = () => {
             if (response.ok) {
                 setCart([...cart, data.item]);  // Update the cart with the new item
             } else {
-                setError(data.message || 'Error adding item to cart.');
+                setError(data.message || 'Error adding item to wishlist.');
             }
         } catch (err) {
-            setError('Error adding item to cart.');
+            setError('Error adding item to wishlist.');
             console.error('Error adding item:', err);
         } finally {
             setLoading(false);
@@ -81,7 +81,7 @@ const Cart = () => {
 
     return (
         <div className="cart-container">
-            <h1>Your Cart</h1>
+            <h1>Your wishlist</h1>
 
             {/* Loading state */}
             {loading && <p>Loading...</p>}
@@ -91,7 +91,7 @@ const Cart = () => {
 
             {/* Display cart items */}
             {cart.length === 0 ? (
-                <p>Your cart is empty.</p>
+                <p>Your wishlist is empty.</p>
             ) : (
                 <div className="cart-items">
                     {cart.map((item) => (

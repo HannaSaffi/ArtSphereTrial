@@ -16,7 +16,6 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path = "/search" element={<Search />} /> {/* Updated route to use Search */}
                     <Route path = "/suggest" element={<Suggest />} /> {/* Updated route to use Suggest */}
-                    <Route path = "/cart" element={<Cart />} /> {/* Updated route to use Suggest */}
                 </Routes>
         </Router>
 
@@ -27,10 +26,3 @@ export default App;
 
 
 
-//**<Router> {/* Wrap the app in a Router */}
-//                         <Routes>
-//                             <Route path="/" element={<Header />} /> {/* Route for the home page */}
-//                             <Route path="/login" element={<Login />} /> {/* Route for the login page */}
-//                             {/* Add more routes as needed */}
-//                         </Routes>
-//                     </Router>
